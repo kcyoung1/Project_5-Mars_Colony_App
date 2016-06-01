@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, Routes, ROUTER_DIRECTIVES , ROUTER_PROVIDERS} from '@angular/router';
 
 import { HomeComponent } from './+home';
@@ -24,11 +24,9 @@ import { ReportComponent } from './+report';
 
 export class Project5AppComponent implements OnInit {
 
-  constructor(){
-
-  }
+  constructor(private router: Router){}
 
   ngOnInit(){
-
+    this.router.navigate(['/home']);
   }
 }

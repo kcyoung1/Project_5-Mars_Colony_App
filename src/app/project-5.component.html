@@ -1,5 +1,10 @@
 <h1>
-  {{title}}
+  Welcome to Mars Bitches
 </h1>
-
-<router-outlet></router-outlet>
+ <a [routerLink]="['/home']">Home</a> |
+ <a [routerLink]="['/register']">Arrival</a> |
+ <a [routerLink]="['/encounters']">Encounters</a> |
+ <a [routerLink]="['/report']">Report</a>
+<router-outlet>
+  <!-- Componenets load here! -->
+</router-outlet>

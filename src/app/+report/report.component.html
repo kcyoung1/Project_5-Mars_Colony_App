@@ -1,3 +1,22 @@
-<p>
-  report works!
-</p>
+<div class="component-container">
+    <h1>
+      Report Encounters
+      <span>Safety on Mars is your responsibility</span>
+    </h1>
+    <form class="">
+      <fieldset>
+        <div class="custom-select">
+          <select class="" name="">
+            <option class="placeholder">Select alien type</option>
+          </select>
+        </div>
+        <textarea name="Action_taken" placeholder="Action taken"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <a [routerLink]="['/encounters']">
+          <button class="button">Submit Report</button>
+        </a>
+      </fieldset>
+    </form>
+</div>

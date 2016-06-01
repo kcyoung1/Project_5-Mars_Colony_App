@@ -34,9 +34,9 @@ select {
   font: 16px Sans-serif;
 }
 .custom-select {
-    height: 2rem;
-    border-bottom: 1px solid #fff;
-    margin-bottom: 20px;
+  height: 2rem;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
 }
 textarea {
   font-size: 16px;
@@ -46,7 +46,6 @@ textarea {
   height: 200px;
 }
 .button {
-  width: 800px;
   height: 100px;
   font-size: 30px;
   color: #fff;
@@ -55,7 +54,8 @@ textarea {
   background: #000;
   border: 0;
   font-size: 30px;
-  margin-top: 100px;
+  width: 90vw;
+  margin-top: 5%;
 }
 a {
   text-decoration: none;

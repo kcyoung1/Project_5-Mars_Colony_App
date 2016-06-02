@@ -4,9 +4,12 @@
       <span>See an Alien? Report it!</span>
     </h1>
     <ul class="encounter-list">
-      <li></li>
-      <li></li>
-      <li></li>
+      <li ng-repeat="encounter in encountersList">
+        <div class="">
+          2016-06-01 - <span>Suh dude</span>
+        </div>
+        <p>Whatever someone writes in the report</p>
+      </li>
     </ul>
   <footer class="content-container">
     <a [routerLink]="['/report']"><div class="button">Report Encounter</div></a>

@@ -1,14 +1,14 @@
-<div class="component-container">
+<div class="checkin-page" ng-swipe-right="enter($event)">
   <div class="content-container">
 
     <h1>Register</h1>
     <form class="" action="index.html" method="post">
       <fieldset>
-        <input type="text" name="name" placeholder="Name">
-        <input type="number" name="age" placeholder="Age">
+        <input type="text" name="name" placeholder="Name" ng-model="colonist.name" required>
+        <input type="number" name="age" placeholder="Age" ng-model="colonist.age" required>
 
         <div class="custom-select">
-          <select class="">
+          <select ng-model="colonist.job_id" ng-class="{ placeholder!colonist.job_id }" >
             <option class="placeholder">Select Occupation</option>
           </select>
           <hr/>
@@ -16,7 +16,7 @@
 
       </fieldset>
       <fieldset>
-        <a [routerLink]="['/encounters']"><button class="check-in" type="button" name="check-in">Check in</button></a>
+        <a [routerLink]="['/encounters']"><button class="check-in" type="button" name="check-in" ng-click="enter($event)">Check in</button></a>
       </fieldset>
     </form>
 

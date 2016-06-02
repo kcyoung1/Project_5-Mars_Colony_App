@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 h1 {
-  height: 300px;
+  height: 150px;
 }
 h1, footer, .button {
   display: flex;
@@ -18,9 +18,10 @@ span {
   font-size: 16px;
 }
 ul {
-  height: 600px;
+  height: 500px;
   overflow: scroll;
   list-style: none;
+  font-weight: 100;
 }
 .button {
   width: 800px;

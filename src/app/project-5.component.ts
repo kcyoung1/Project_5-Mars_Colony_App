@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, Routes, ROUTER_DIRECTIVES , ROUTER_PROVIDERS} from '@angular/router';
+import { Router, Routes, ROUTER_DIRECTIVES , ROUTER_PROVIDERS } from '@angular/router';
 
 import { HomeComponent } from './+home';
 import { RegisterComponent } from './+register';

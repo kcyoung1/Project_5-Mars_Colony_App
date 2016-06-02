@@ -1,22 +1,31 @@
-<div class="checkin-page" ng-swipe-right="enter($event)">
+<div class="checkin-page">
   <div class="content-container">
 
     <h1>Register</h1>
-    <form class="" action="index.html" method="post">
+    <form (ngSubmit)="onSubmit()" #arrivalForm="ngForm">
       <fieldset>
-        <input type="text" name="name" placeholder="Name" ng-model="colonist.name" required>
-        <input type="number" name="age" placeholder="Age" ng-model="colonist.age" required>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Name" required>
+        </div>
+        <div>
+          <label for="name">Age</label>
+          <input type="number" name="age" placeholder="Age" required>
+        </div>
 
         <div class="custom-select">
-          <select ng-model="colonist.job_id" ng-class="{ placeholder!colonist.job_id }" >
-            <option class="placeholder">Select Occupation</option>
+          <label for="occupation">Select Occupation</label>
+
+          <select ng-class="{ placeholder!colonist.job_id }" >
+            <option class="placeholder" value="none">Select Occupation</option>
+            <option></option>
           </select>
           <hr/>
         </div>
 
       </fieldset>
       <fieldset>
-        <a [routerLink]="['/encounters']"><button class="check-in" type="button" name="check-in" ng-click="enter($event)">Check in</button></a>
+        <button class="check-in" type="button" name="check-in" ng-click="enter($event)">Check in</button>
       </fieldset>
     </form>
 

@@ -15,8 +15,7 @@ import { IOccupation, Colonist } from '../shared/models';
 })
 export class RegisterComponent implements OnInit {
 
-
-  NO_OCCUPATION_SELECTED = '(none)';
+  public NO_OCCUPATION_SELECTED: string;
   public occupations: IOccupation[];
   public colonist: Colonist;
 
@@ -25,14 +24,18 @@ export class RegisterComponent implements OnInit {
     private colonistService: ColonistService,
     private occupationService: OccupationService
   ) {
-
+    this.NO_OCCUPATION_SELECTED = '(none)';
   }
 
-  ngOnInit() {
-    this.colonist = new Colonist(null, null, null);
+  ngOnInit() : void {
+    this.colonist = new Colonist(null, null, this.NO_OCCUPATION_SELECTED);
     this.occupationService.getJobs().then( jobs => this.occupations = jobs);
   }
-  onSubmit(event, form){
-
+  onSubmit(event) : void {
+    this.colonistService.createColonist(this.colonist)
+                        .then( colonist => this.router.navigate(['/encounters']))
+  }
+  get noOccupation() : boolean {
+    return this.colonist.job_id === this.NO_OCCUPATION_SELECTED;
   }
 }

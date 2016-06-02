@@ -35,7 +35,7 @@ select {
   -webkit-appearance: none;
   outline: none;
 }
-select.placeholder {
+select option:first-child {
   color: #ed4343;
 }
 button {

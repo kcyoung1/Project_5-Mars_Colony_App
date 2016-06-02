@@ -2,30 +2,25 @@
   <div class="content-container">
 
     <h1>Register</h1>
-    <form (ngSubmit)="onSubmit()" #arrivalForm="ngForm">
+    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm">
       <fieldset>
         <div>
-          <label for="name">Name</label>
-          <input type="text" name="name" placeholder="Name" required>
+          <input ngControl="name" [(ngModel)]="colonist.name" type="text" name="name" placeholder="Name" required>
         </div>
         <div>
-          <label for="name">Age</label>
-          <input type="number" name="age" placeholder="Age" required>
+          <input ngControl="age" [(ngModel)]="colonist.age" type="number" name="age" placeholder="Age" required>
         </div>
 
         <div class="custom-select">
-          <label for="occupation">Select Occupation</label>
-
-          <select ng-class="{ placeholder!colonist.job_id }" >
-            <option class="placeholder" value="none">Select Occupation</option>
-            <option></option>
+          <select ngControl="job" [(ngModel)]="colonist.job_id" required>
+            <option class="placeholder" [value]="null">Select Occupation</option>
+            <option *ngFor="let job of occupations" [value]="job.id" >{{ job.name }}</option>
           </select>
-          <hr/>
         </div>
 
       </fieldset>
       <fieldset>
-        <button class="check-in" type="button" name="check-in" ng-click="enter($event)">Check in</button>
+        <button ng-click="enter($event)" class="check-in" type="submit" name="check-in" [disabled]="!registerForm.form.valid">Check in</button>
       </fieldset>
     </form>
 

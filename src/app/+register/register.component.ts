@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { NgForm } from '@angular/common';
 import { OccupationService, ColonistService } from '../shared/services';
 import { IOccupation, Colonist } from '../shared/models';
-import { NgForm } from '@angular/common';
+
 
 @Component({
   moduleId: module.id,
@@ -14,7 +15,10 @@ import { NgForm } from '@angular/common';
 })
 export class RegisterComponent implements OnInit {
 
+
+  NO_OCCUPATION_SELECTED = '(none)';
   public occupations: IOccupation[];
+  public colonist: Colonist;
 
   constructor(
     private router: Router,
@@ -25,7 +29,10 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.colonist = new Colonist(null, null, null);
     this.occupationService.getJobs().then( jobs => this.occupations = jobs);
   }
+  onSubmit(event, form){
 
+  }
 }

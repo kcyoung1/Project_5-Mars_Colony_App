@@ -4,11 +4,11 @@
       <span>See an Alien? Report it!</span>
     </h1>
     <ul class="encounter-list">
-      <li ng-repeat="encounter in encountersList">
+      <li *ngFor="let encounter of encounters">
         <div class="">
-          2016-06-01 - <span>Suh dude</span>
+          {{ encounter.date }} - <span>{{ encounter.atype }}</span>
         </div>
-        <p>Whatever someone writes in the report</p>
+        <p>{{ encounter.action }}</p>
       </li>
     </ul>
   <footer class="content-container">

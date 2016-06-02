@@ -13,15 +13,15 @@ import { Encounter } from '../shared/models';
 })
 export class EncountersComponent implements OnInit {
 
-  public encounter: Encounter;
+  public encounters: Encounter[];
 
   constructor(
     private router: Router,
     private encounterService: EncounterService
   ) {}
 
-  ngOnInit() {
-    this.encounterService.getEncounters().then( encounters => this.encounter = encounters )
+  ngOnInit() : void {
+    this.encounterService.getEncounters().then( result => this.encounters = result );
   }
 
 }

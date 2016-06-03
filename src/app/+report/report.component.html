@@ -3,20 +3,19 @@
       Report Encounters
       <span>Safety on Mars is your responsibility</span>
     </h1>
-    <form>
+    <form (ngSubmit)="onSubmit($event, reportForm)" #reportForm="ngForm">
       <fieldset class="select-text-field">
         <div class="custom-select">
           <select>
-            <option class="placeholder">Select alien type</option>
+            <option [value]="NO_ALIEN_SELECTED" class="placeholder" disabled="disabled" selected="selected">Select alien type</option>
+            <option *ngFor="let alien of aliens" [value]="alien.id">{{ alien.type }}</option>
           </select>
         </div>
         <textarea name="Action_taken" placeholder="Action taken"></textarea>
       </fieldset>
 
       <fieldset>
-        <a [routerLink]="['/encounters']">
-          <button class="button">Submit Report</button>
-        </a>
+          <button class="button" ng-click="enter($event)" [disabled]="noAlien ||  !reportForm.form.valid">Submit Report</button>
       </fieldset>
     </form>
 </div>

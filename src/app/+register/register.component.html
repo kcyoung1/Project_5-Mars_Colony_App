@@ -13,7 +13,7 @@
 
         <div class="custom-select">
           <select ngControl="job" [(ngModel)]="colonist.job_id">
-            <option class="placeholder" [value]="NO_OCCUPATION_SELECTED" disabled="disabled" selected="selected">Select Occupation</option>
+            <option [value]="NO_OCCUPATION_SELECTED" class="placeholder"  disabled="disabled" selected="selected">Select Occupation</option>
             <option *ngFor="let job of occupations" [value]="job.id" >{{ job.name }}</option>
           </select>
 

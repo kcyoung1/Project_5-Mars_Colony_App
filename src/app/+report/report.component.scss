@@ -2,6 +2,10 @@
   height: 100vh;
   background: #000;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   height: 100px;
@@ -18,7 +22,6 @@ h1, .button {
 
 fieldset {
   border: 0;
-  margin-left: 20px;
   select {
     -webkit-appearance: none;
     background: transparent;

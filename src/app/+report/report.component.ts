@@ -26,7 +26,7 @@ export class ReportComponent implements OnInit {
   }
 
   ngOnInit() {
-  
+    this.alienService.getAliens().then( alientype => this.aliens = alientype );
   }
 
 }

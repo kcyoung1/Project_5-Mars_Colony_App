@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes, ROUTER_DIRECTIVES , ROUTER_PROVIDERS } from '@angular/router';
+import { BlogComponent } from './+blog';
 
 import { HomeComponent } from './+home';
 import { RegisterComponent } from './+register';
@@ -19,7 +20,8 @@ import { ReportComponent } from './+report';
   {path: '/home', component: HomeComponent},
   {path: '/register', component: RegisterComponent},
   {path: '/encounters', component: EncountersComponent},
-  {path: '/report', component: ReportComponent}
+  {path: '/report', component: ReportComponent},
+  {path: '/blog', component: BlogComponent}
 ])
 
 export class Project5AppComponent implements OnInit {

@@ -16,6 +16,7 @@ export class ReportComponent implements OnInit {
   public NO_ALIEN_SELECTED: string;
   public aliens: IAlien[];
   public encounters: Encounter;
+  private savedColonist = sessionStorage.getItem('colonist.job_id');
 
   constructor(
     private router: Router,
@@ -23,11 +24,12 @@ export class ReportComponent implements OnInit {
     private encounterService: EncounterService
   ) {
     this.NO_ALIEN_SELECTED = '(none)';
+
   }
 
   ngOnInit() : void {
     this.alienService.getAliens().then( alientype => this.aliens = alientype );
-    this.encounters = new Encounter(null, null, '', null);
+    this.encounters = new Encounter(this.NO_ALIEN_SELECTED, '', '43', '');
   }
   onSubmit(event) : void {
     this.encounterService.createEncounters(this.encounters)
@@ -36,4 +38,5 @@ export class ReportComponent implements OnInit {
   get noAlien() : boolean {
     return this.encounters.atype === this.NO_ALIEN_SELECTED;
   }
+
 }

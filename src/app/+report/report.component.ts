@@ -25,8 +25,15 @@ export class ReportComponent implements OnInit {
     this.NO_ALIEN_SELECTED = '(none)';
   }
 
-  ngOnInit() {
+  ngOnInit() : void {
     this.alienService.getAliens().then( alientype => this.aliens = alientype );
+    this.encounters = new Encounter(null, null, '', null);
   }
-
+  onSubmit(event) : void {
+    this.encounterService.createEncounters(this.encounters)
+                         .then( encounters => this.router.navigate(['/encounters']))
+  }
+  get noAlien() : boolean {
+    return this.encounters.atype === this.NO_ALIEN_SELECTED;
+  }
 }

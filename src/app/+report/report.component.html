@@ -1,21 +1,26 @@
-<div class="component-container">
+<div class="report-container">
+
     <h1>
       Report Encounters
       <span>Safety on Mars is your responsibility</span>
     </h1>
+
     <form (ngSubmit)="onSubmit($event, reportForm)" #reportForm="ngForm">
       <fieldset class="select-text-field">
         <div class="custom-select">
-          <select>
+          <select ngControl="atype" [(ngModel)]="encounters.atype">
             <option [value]="NO_ALIEN_SELECTED" class="placeholder" disabled="disabled" selected="selected">Select alien type</option>
-            <option *ngFor="let alien of aliens" [value]="alien.id">{{ alien.type }}</option>
+            <option *ngFor="let alien of aliens" [value]="alien.id">
+              {{ alien.type }}
+            </option>
           </select>
         </div>
-        <textarea name="Action_taken" placeholder="Action taken"></textarea>
+        <textarea ngControl="action" [(ngModel)]="encounters.action" name="Action_taken" placeholder="Action taken" required></textarea>
       </fieldset>
 
       <fieldset>
-          <button class="button" ng-click="enter($event)" [disabled]="noAlien ||  !reportForm.form.valid">Submit Report</button>
+          <button class="button" ng-click="enter($event)" [disabled]="noAlien || !reportForm.form.valid">Submit Report</button>
       </fieldset>
     </form>
-</div>
+
+</div><!-- .report-container -->

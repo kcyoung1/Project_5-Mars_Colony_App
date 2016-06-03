@@ -2,6 +2,7 @@
   <div class="content-container">
 
     <h1>Register</h1>
+
     <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm">
       <fieldset>
         <div>
@@ -14,14 +15,17 @@
         <div class="custom-select">
           <select ngControl="job" [(ngModel)]="colonist.job_id">
             <option [value]="NO_OCCUPATION_SELECTED" class="placeholder"  disabled="disabled" selected="selected">Select Occupation</option>
-            <option *ngFor="let job of occupations" [value]="job.id" >{{ job.name }}</option>
+            <option *ngFor="let job of occupations" [value]="job.id" >
+              {{ job.name }}
+            </option>
           </select>
 
         </div>
       </fieldset>
       <fieldset>
-        <button ng-click="enter($event)" class="check-in" type="submit" [disabled]="noOccupation ||  !registerForm.form.valid">Check in</button>
+        <button ng-click="enter($event)" class="check-in"  [disabled]="noOccupation ||  !registerForm.form.valid" type="submit">Check in</button>
       </fieldset>
     </form>
-  </div>
-</div>
+
+  </div><!-- .content-container -->
+</div><!-- .register-page -->

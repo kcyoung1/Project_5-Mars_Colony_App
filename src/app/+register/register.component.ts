@@ -33,7 +33,9 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit(event) : void {
     this.colonistService.createColonist(this.colonist)
-                        .then( colonist => this.router.navigate(['/encounters']))
+                        .then( (colonist) => { this.router.navigate(['/encounters']);
+                        sessionStorage.setItem('colonistid', colonist.id);
+                      });
   }
   get noOccupation() : boolean {
     return this.colonist.job_id === this.NO_OCCUPATION_SELECTED;

@@ -3,7 +3,7 @@
 
     <h1>Register</h1>
 
-    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm">
+    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm" ngClass="{submitted:newColonist.submitted}">
       <fieldset>
         <div>
           <input ngControl="name" [(ngModel)]="colonist.name" type="text" name="name" placeholder="Name" required>

@@ -3,13 +3,10 @@
 .register-page {
   max-width:100vw;
   font-family: sans-serif;
-
   color: #fff;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  height: 100vh;
-  background: black;
 }
 /* Form */
 
@@ -30,7 +27,7 @@ input, .custom-select {
   line-height: 2;
 }
 ::-webkit-input-placeholder, select option:first-child  {
-  color: #ed4343;
+  color: #fff;
 }
 input.ng-invalid, select.ng-invalid {
   /*animation: invalid .5s 4;*/

@@ -14,11 +14,11 @@ export interface IOccupation {
 export class Encounter {
   constructor(
     public atype: string,
-    public date: string,
+    public date = new Date(),
     public action: string,
     public colonist_id: string
   ){
-
+    
   }
 }
 

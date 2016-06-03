@@ -1,5 +1,7 @@
 .site-container {
   height: 100vh;
+  background: linear-gradient(90deg, #000, #5b0b03);
+
 }
 html, body {
   width: 100%;
@@ -35,4 +37,9 @@ button {
   background: transparent;
   color: #fff;
   border: 0;
+}
+a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
 }

@@ -13,9 +13,20 @@ import { IAlien, Encounter } from '../shared/models';
 })
 export class ReportComponent implements OnInit {
 
-  constructor() {}
+  public NO_ALIEN_SELECTED: string;
+  public aliens: IAlien[];
+  public encounters: Encounter;
+
+  constructor(
+    private router: Router,
+    private alienService: AlienService,
+    private encounterService: EncounterService
+  ) {
+    this.NO_ALIEN_SELECTED = '(none)';
+  }
 
   ngOnInit() {
+  
   }
 
 }

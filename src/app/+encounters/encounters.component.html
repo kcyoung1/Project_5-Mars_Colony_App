@@ -4,14 +4,17 @@
       <span>See an Alien? Report it!</span>
     </h1>
     <ul class="encounter-list">
-      <li *ngFor="let encounter of encounters">
-        <div class="">
-          {{ encounter.date }} - <span>{{ encounter.atype }}</span>
+
+      <li *ngFor="let encounter of encounters" >
+        <div>
+          {{ encounter.date }} -
+          <span>{{ encounter.atype }}</span>
         </div>
         <p>{{ encounter.action }}</p>
       </li>
+
     </ul>
-  <footer class="content-container">
+  <footer>
     <a [routerLink]="['/report']"><div class="button">Report Encounter</div></a>
   </footer>
 </div>

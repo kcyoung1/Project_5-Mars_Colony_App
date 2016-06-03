@@ -1,3 +1,13 @@
-<p>
-  blog works!
-</p>
+<div class="blog-container">
+
+  <h1>4th Rock from the Sun</h1>
+  <div *ngFor="let blog of blogs">
+    <h1>
+      {{ blog.title.rendered }}
+    </h1>
+    <p>
+      {{ blog.content.rendered }}
+    </p>
+  </div>
+
+</div>

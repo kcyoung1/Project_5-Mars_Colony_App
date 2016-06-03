@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes, ROUTER_DIRECTIVES , ROUTER_PROVIDERS } from '@angular/router';
-import { BlogComponent } from './+blog';
 
 import { HomeComponent } from './+home';
 import { RegisterComponent } from './+register';
 import { EncountersComponent } from './+encounters';
 import { ReportComponent } from './+report';
+import { BlogComponent } from './+blog';
 
 
 @Component({

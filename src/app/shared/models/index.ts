@@ -11,6 +11,11 @@ export interface IOccupation {
   description: string
 }
 
+export interface IBlog {
+  title?: string,
+  content?: string
+}
+
 export class Encounter {
   constructor(
     public atype: string,

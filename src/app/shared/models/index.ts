@@ -13,7 +13,8 @@ export interface IOccupation {
 
 export interface IBlog {
   title?: string,
-  content?: string
+  content?: string,
+  link?: string
 }
 
 export class Encounter {

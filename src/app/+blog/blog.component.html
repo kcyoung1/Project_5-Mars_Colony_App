@@ -2,13 +2,17 @@
 
   <h1 class="blog-title">4th Rock from the Sun</h1>
 
-  <div *ngFor="let blog of blogs" class="content-container">
-    <h1>
-      {{ blog.title.rendered }}
-    </h1>
-    <p>
-      {{ blog.content.rendered }}
-    </p>
+  <ul *ngFor="let blog of blogs" class="content-container">
+    <li>
+      <a href="{{ blog.link }}">
+        <h1>
+          {{ blog.title.rendered }}
+        </h1>
+      </a>
+      <p class="pretext-wrap">
+        {{ blog.content.rendered | filterTags }}
+      </p>
+    </li>
+  </ul><!-- .content-container -->
 
-  </div><!-- .content-container -->
 </div><!-- .blog-page -->

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES} from '@angular/router';
+
 import { BlogService } from '../shared/services';
 import { IBlog } from '../shared/models';
+import { FilterHtmlTags } from './filter.pipe'
 
 @Component({
   moduleId: module.id,
@@ -9,7 +11,8 @@ import { IBlog } from '../shared/models';
   templateUrl: 'blog.component.html',
   styleUrls: ['blog.component.css'],
   providers: [BlogService],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  pipes: [FilterHtmlTags]
 })
 export class BlogComponent implements OnInit {
 

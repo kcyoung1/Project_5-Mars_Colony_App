@@ -1,11 +1,11 @@
 .blog-page {
-  max-width: 1120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  background: rgba(0,0,0,.5);
+  background: linear-gradient(to right, rgba(0,0,0,0.5),rgba(5, 112, 89, 0.5)), url(http://fourth.academy.red/wp-content/themes/vue-from-mars/dist/assets/images/mars-bkgd.jpg) no-repeat top center;
+  background-size: cover;
 }
 .blog-title {
   padding: 30px;
@@ -17,4 +17,7 @@ h1, p {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+}
+.pretext-wrap {
+    white-space: pre-line;
 }

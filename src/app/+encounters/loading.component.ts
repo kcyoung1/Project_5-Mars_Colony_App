@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {NgSwitch, NgSwitchWhen} from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { NgSwitch, NgSwitchWhen } from '@angular/common';
 
 @Component({
     selector: 'loading-container',

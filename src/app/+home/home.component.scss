@@ -1,6 +1,4 @@
-.site-container {
-  height: 100vh;
-}
+/* Home Page */
 .home-page {
   max-width:100vw;
   color: #fff;
@@ -33,6 +31,8 @@ h1, h3 {
   background:   linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.4));
   animation: border-pulse 2s infinite;
 }
+
+/* Key Frames */
 
 @keyframes border-pulse {
   0% {

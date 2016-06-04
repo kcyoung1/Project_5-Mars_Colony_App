@@ -1,10 +1,20 @@
-.blog-container {
+.blog-page {
+  max-width: 1120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  background: rgba(0,0,0,.5);
+}
+.blog-title {
+  padding: 30px;
+  font-size: 40px;
 }
 h1, p {
   padding: 10px 30px;
   color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

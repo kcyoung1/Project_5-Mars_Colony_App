@@ -1,13 +1,14 @@
-<div class="blog-container">
+<div class="blog-page">
 
-  <h1>4th Rock from the Sun</h1>
-  <div *ngFor="let blog of blogs">
+  <h1 class="blog-title">4th Rock from the Sun</h1>
+
+  <div *ngFor="let blog of blogs" class="content-container">
     <h1>
       {{ blog.title.rendered }}
     </h1>
     <p>
       {{ blog.content.rendered }}
     </p>
-  </div>
 
-</div>
+  </div><!-- .content-container -->
+</div><!-- .blog-page -->

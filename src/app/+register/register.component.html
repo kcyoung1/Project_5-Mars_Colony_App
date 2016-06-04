@@ -3,8 +3,8 @@
 
     <h1>Register</h1>
 
-    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm" ngClass="{submitted:newColonist.submitted}">
-      <fieldset>
+    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm" [ngClass]="{submitted:newColonist.submitted}" class="register-form">
+      <fieldset class="field-input">
         <div>
           <input ngControl="name" [(ngModel)]="colonist.name" type="text" name="name" placeholder="Name" required>
         </div>
@@ -19,13 +19,13 @@
               {{ job.name }}
             </option>
           </select>
+        </div> <!-- .custom-selecct -->
+      </fieldset><!-- .field-input -->
 
-        </div>
-      </fieldset>
-      <fieldset>
+      <fieldset class="field-button">
         <button ng-click="enter($event)" class="check-in"  [disabled]="noOccupation ||  !registerForm.form.valid" type="submit">Check in</button>
-      </fieldset>
-    </form>
+      </fieldset><!-- .field-button -->
 
+    </form><!-- .register-form -->
   </div><!-- .content-container -->
 </div><!-- .register-page -->

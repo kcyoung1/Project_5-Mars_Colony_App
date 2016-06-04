@@ -3,7 +3,7 @@
 
     <h1>Register</h1>
 
-    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm" [ngClass]="{submitted:newColonist.submitted}" class="register-form">
+    <form (ngSubmit)="onSubmit($event, registerForm)" #registerForm="ngForm" class="register-form">
       <fieldset class="field-input">
         <div>
           <input ngControl="name" [(ngModel)]="colonist.name" type="text" name="name" placeholder="Name" required>
@@ -11,6 +11,7 @@
         <div>
           <input ngControl="age" [(ngModel)]="colonist.age" type="number" name="age" placeholder="Age" required>
         </div>
+
 
         <div class="custom-select">
           <select ngControl="job" [(ngModel)]="colonist.job_id">

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+
 import { EncounterService } from '../shared/services';
 import { Encounter } from '../shared/models';
+import { LoadingContainer, LoadingPage } from './loading.component';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +11,7 @@ import { Encounter } from '../shared/models';
   templateUrl: 'encounters.component.html',
   styleUrls: ['encounters.component.css'],
   providers: [EncounterService],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, LoadingContainer]
 })
 export class EncountersComponent implements OnInit {
 

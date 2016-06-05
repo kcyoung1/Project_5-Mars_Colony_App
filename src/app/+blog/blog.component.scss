@@ -24,9 +24,19 @@
 }
 .blog-title {
   margin: 20px 0 30px 0;
-  padding: 30px;
-  font-size: 40px;
+  padding: 20px;
+  font-size: 1.8rem;
   border: 1px solid #fff;
+  @include tablet {
+    padding: 30px;
+    font-size: 2.5rem;
+  }
+}
+h1 {
+  font-size: 1.5rem;
+  @include tablet {
+    font-size: 1.8rem;
+  }
 }
 h1, p {
   padding: 10px 30px;
@@ -47,14 +57,13 @@ li {
   margin: 20px 0 10px 30px;
   border: 1px solid #fff;
   padding: 10px 15px;
-  font-size: 12px;
+  font-size: .8rem;
   &:hover {
     border-color: #15fbbd;
     background-color: #15fbbd;
     color: #000;
   }
 }
-
 a h1 {
   &:hover {
     color: #15fbbd;

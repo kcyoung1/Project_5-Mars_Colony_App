@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   public occupations: IOccupation[];
   public colonist: Colonist;
   public status: string;
+  public showValidation = false;
 
   constructor(
     private router: Router,
@@ -27,6 +28,7 @@ export class RegisterComponent implements OnInit {
   ) {
     this.NO_OCCUPATION_SELECTED = '(none)';
     this.status = 'loading';
+
   }
 
   ngOnInit() : void {

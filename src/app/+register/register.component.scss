@@ -27,11 +27,11 @@ input, .custom-select {
   margin-bottom: 20px;
   line-height: 2;
 }
-::-webkit-input-placeholder, select option:first-child  {
+::-webkit-input-placeholder, .custom-select select.placeholder, select {
   color: #15fbbd;
 }
-input.ng-invalid, select.ng-invalid {
-  /*animation: invalid .5s 4;*/
+input.ng-invalid.ng-dirty, select.ng-invalid.ng-dirty {
+  animation: invalid .5s 4;
 }
 select {
   -webkit-appearance: none;
@@ -44,8 +44,7 @@ select {
     0% {
       box-shadow: 0 0 0 0 #ed4343;
   }
-
   100% {
       box-shadow: 0 0 0 .5rem rgba(237,67,67,.2);
   }
-}
+}  

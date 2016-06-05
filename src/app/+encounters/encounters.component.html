@@ -3,8 +3,13 @@
       Recent Encounters
       <span>See an Alien? Report it!</span>
     </h1>
+  <div [ngSwitch]='status' class="content-container">
 
-    <ul class="encounter-list">
+    <div *ngSwitchWhen="'loading'" class="loading">
+      Loading...
+    </div>
+
+    <ul *ngSwitchWhen="'done'" class="encounter-list">
       <li *ngFor="let encounter of encounters" >
         <div>
           {{ encounter.date }} -
@@ -14,8 +19,10 @@
       </li>
     </ul><!-- .encounter-list -->
 
-    <div class="footer">
-          <a [routerLink]="['/report']"><div class="button">Report Encounter</div></a>
-    </div><!-- .footer -->
+  </div><!-- ngSwitch -->
+
+  <div class="footer">
+    <a [routerLink]="['/report']"><div class="button">Report Encounter</div></a>
+  </div><!-- .footer -->
 
 </div><!-- .encounter-page -->

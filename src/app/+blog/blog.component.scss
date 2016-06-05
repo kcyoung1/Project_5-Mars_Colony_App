@@ -1,5 +1,7 @@
 @import '../shared/partials/mixins';
 
+/* Blog Page */
+
 .blog-page {
   display: flex;
   flex-direction: column;
@@ -11,8 +13,10 @@
 }
 .content-container {
   max-width: 400px;
+  font-size: .9rem;
   @include tablet {
-    max-width: 700px;
+    max-width: 600px;
+    font-size: 1rem;
   }
   @include desktop {
     max-width: 900px
@@ -34,7 +38,7 @@ h1, p {
 p {
   margin-bottom: 30px;
 }
-ul {
+li {
   padding-bottom: 40px;
   margin-bottom: 20px;
   border-bottom: 1px solid #fff;
@@ -46,9 +50,12 @@ ul {
   font-size: 12px;
   &:hover {
     border-color: #15fbbd;
+    background-color: #15fbbd;
+    color: #000;
   }
 }
-a h1, a {
+
+a h1 {
   &:hover {
     color: #15fbbd;
   }

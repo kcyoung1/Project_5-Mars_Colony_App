@@ -3,7 +3,6 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { EncounterService } from '../shared/services';
 import { Encounter } from '../shared/models';
-import { LoadingContainer, LoadingPage } from './loading.component';
 
 @Component({
   moduleId: module.id,
@@ -11,19 +10,24 @@ import { LoadingContainer, LoadingPage } from './loading.component';
   templateUrl: 'encounters.component.html',
   styleUrls: ['encounters.component.css'],
   providers: [EncounterService],
-  directives: [ROUTER_DIRECTIVES, LoadingContainer]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class EncountersComponent implements OnInit {
 
   public encounters: Encounter[];
+  public status: string;
 
   constructor(
     private router: Router,
     private encounterService: EncounterService
-  ) {}
+  ) {
+    this.status = 'loading';
+  }
 
   ngOnInit() : void {
-    this.encounterService.getEncounters().then( result => this.encounters = result );
+    this.encounterService.getEncounters().then( result => { this.encounters = result;
+    this.status = 'done';
+  });
   }
 
 }

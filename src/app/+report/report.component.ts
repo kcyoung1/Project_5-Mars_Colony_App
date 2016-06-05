@@ -17,6 +17,7 @@ export class ReportComponent implements OnInit {
   public aliens: IAlien[];
   public encounters: Encounter;
   public savedColonist: string;
+  public status: string;
 
   constructor(
     private router: Router,
@@ -25,10 +26,13 @@ export class ReportComponent implements OnInit {
   ) {
     this.NO_ALIEN_SELECTED = '(none)';
     this.savedColonist = sessionStorage.getItem('colonistid');
+    this.status = 'loading';
   }
 
   ngOnInit() : void {
-    this.alienService.getAliens().then( alientype => this.aliens = alientype );
+    this.alienService.getAliens().then( alientype => { this.aliens = alientype;
+    this.status = 'done';
+    });
     this.encounters = new Encounter(this.NO_ALIEN_SELECTED, '', this.savedColonist, '');
   }
   onSubmit(event) : void {

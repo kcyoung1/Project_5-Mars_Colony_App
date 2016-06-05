@@ -13,14 +13,20 @@
         </div>
 
 
-        <div class="custom-select">
-          <select ngControl="job" [(ngModel)]="colonist.job_id">
-            <option [value]="NO_OCCUPATION_SELECTED" class="placeholder"  disabled="disabled" selected="selected">Select Occupation</option>
+        <div [ngSwitch]='status' class="custom-select">
+
+          <div *ngSwitchWhen="'loading'">
+            Loading...
+          </div>
+
+          <select ngControl="job" [(ngModel)]="colonist.job_id" *ngSwitchWhen="'done'" >
+            <option [value]="NO_OCCUPATION_SELECTED"  class="placeholder" disabled="disabled" selected="selected">Select Occupation</option>
             <option *ngFor="let job of occupations" [value]="job.id" >
               {{ job.name }}
             </option>
           </select>
         </div> <!-- .custom-selecct -->
+
       </fieldset><!-- .field-input -->
 
       <fieldset class="field-button">

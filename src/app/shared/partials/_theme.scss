@@ -1,7 +1,51 @@
+@import 'mixins';
+
+/* Site Wide Styling */
+
+/* Navigation Menu */
+
+.navigation {
+  background-color: rgba(201, 201, 201, 0.54);
+  color: #fff;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  @include tablet {
+    justify-content: flex-end;
+  }
+  a {
+    padding: 0 20px;
+    &:hover {
+      color: #15fbbd;
+    }
+  }
+}
+
+/* Containers and Loading */
+
 .site-container {
   height: 100vh;
   background: linear-gradient(to right, rgba(0,0,0,1),rgba(5, 112, 89,1));
 }
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1120px;
+}
+.loading {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+/* Elements */
+
 html, body {
   width: 100%;
   height: 100%;
@@ -10,7 +54,7 @@ html, body {
   font-size: 16px;
 }
 h1  {
-  font-size: 30px;
+  font-size: 2.5rem;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
@@ -18,18 +62,13 @@ h1  {
   align-items: center;
 }
 h3 {
-  font-size: 25px;
+  font-size: 1.5rem;
 }
-.content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1120px;
-}
+
 button {
   height: 100px;
   width: 90vw;
-  font-size: 30px;
+  font-size: 2.5rem;
   cursor: pointer;
   margin-top: 100px;
   font-weight: 200;
@@ -41,11 +80,4 @@ a {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-}
-.loading {
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-  border: 1px solid #fff;
-  padding: 10px;
 }

@@ -19,8 +19,10 @@
   }
 }
 .blog-title {
+  margin: 20px 0 30px 0;
   padding: 30px;
   font-size: 40px;
+  border: 1px solid #fff;
 }
 h1, p {
   padding: 10px 30px;
@@ -42,4 +44,12 @@ ul {
   border: 1px solid #fff;
   padding: 10px 15px;
   font-size: 12px;
+  &:hover {
+    border-color: #15fbbd;
+  }
+}
+a h1, a {
+  &:hover {
+    color: #15fbbd;
+  }
 }

@@ -22,7 +22,17 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDY2h3g93TsQ8VwVZt9G8DYIF2VQxSzMkk",
+        authDomain: "project-5-mars-colony-app.firebaseapp.com",
+        databaseURL: "https://project-5-mars-colony-app.firebaseio.com",
+        storageBucket: "project-5-mars-colony-app.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
 
 
 
